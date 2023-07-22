@@ -101,6 +101,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no GIF image to display." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Ta-8H-Xsq">
+                                <rect key="frame" x="16" y="119" width="343" height="543"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -111,12 +118,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bWI-nP-Gek" secondAttribute="trailing" constant="16" id="UaU-o9-l5g"/>
                             <constraint firstItem="bWI-nP-Gek" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hYw-oB-S4K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kHy-rc-RVv" secondAttribute="bottom" constant="675" id="qQF-Je-Izn"/>
+                            <constraint firstItem="6Ta-8H-Xsq" firstAttribute="top" secondItem="kHy-rc-RVv" secondAttribute="bottom" constant="16" id="sKg-L7-B9X"/>
                             <constraint firstItem="bWI-nP-Gek" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="u0N-JO-GbE"/>
                             <constraint firstItem="kHy-rc-RVv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vzZ-DS-iFf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="gifCollectionView" destination="bWI-nP-Gek" id="eEh-GM-NvG"/>
+                        <outlet property="gifDisplayLabel" destination="6Ta-8H-Xsq" id="oKn-Ac-bE3"/>
                         <outlet property="searchBar" destination="kHy-rc-RVv" id="nk4-hr-Uqn"/>
                     </connections>
                 </viewController>
@@ -126,6 +135,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

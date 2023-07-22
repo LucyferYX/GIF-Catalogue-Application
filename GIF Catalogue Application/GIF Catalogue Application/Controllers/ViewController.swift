@@ -7,18 +7,36 @@
 
 import UIKit
 import RxSwift
+//import RxCocoa
+//import SDWebImage
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var gifCollectionView: UICollectionView!
+    @IBOutlet weak var gifDisplayLabel: UILabel!
+    
+    private let giphyAPIKey = "eD2EKarMyNu9z4nBQaKzAC2Zyfg72oky"
+    private let giphyURLSearch = "api.giphy.com/v1/gifs/search"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // User taps anywhere to dismiss the keyboard
+        let userTap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        userTap.cancelsTouchesInView = false
+        view.addGestureRecognizer(userTap)
+        
+        searchBar.delegate = self
     }
-
-    // eD2EKarMyNu9z4nBQaKzAC2Zyfg72oky
-
+    
+    // User taps "Search" to dismiss the keyboard
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    //----------------------------------------
+    
+    
+    
 }
-
