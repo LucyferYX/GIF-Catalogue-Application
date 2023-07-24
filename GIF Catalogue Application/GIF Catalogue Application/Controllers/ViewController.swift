@@ -10,11 +10,15 @@ import RxSwift
 //import RxCocoa
 //import SDWebImage
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class ViewController: UICollectionViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var gifCollectionView: UICollectionView!
     @IBOutlet weak var gifDisplayLabel: UILabel!
+    
+    // Testing
+    @IBOutlet weak var gifView: UIView!
+    @IBOutlet weak var gifImageView: UIImageView!
     
     private let giphyAPIKey = "eD2EKarMyNu9z4nBQaKzAC2Zyfg72oky"
     private let giphyURLSearch = "api.giphy.com/v1/gifs/search"
@@ -27,6 +31,9 @@ class ViewController: UIViewController, UISearchBarDelegate {
         userTap.cancelsTouchesInView = false
         view.addGestureRecognizer(userTap)
         
+        // Rounding corners of gif
+        gifView.layer.borderWidth = 2.0
+        
         searchBar.delegate = self
     }
     
@@ -34,6 +41,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
+
     
     //----------------------------------------
     
