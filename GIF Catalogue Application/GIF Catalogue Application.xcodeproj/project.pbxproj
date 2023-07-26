@@ -10,6 +10,7 @@
 		7E1AE70D2A6B4514008A1996 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E1AE70C2A6B4514008A1996 /* RxSwift */; };
 		7E1AE70F2A6B4518008A1996 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7E1AE70E2A6B4518008A1996 /* RxCocoa */; };
 		7E1AE7122A6B499B008A1996 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7E1AE7112A6B499B008A1996 /* SDWebImage */; };
+		7E36F5D62A711B37009BB86B /* GifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E36F5D52A711B37009BB86B /* GifCell.swift */; };
 		7EB740222A6998DC008EABF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB740212A6998DC008EABF5 /* AppDelegate.swift */; };
 		7EB740242A6998DC008EABF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB740232A6998DC008EABF5 /* SceneDelegate.swift */; };
 		7EB740262A6998DC008EABF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB740252A6998DC008EABF5 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E36F5D52A711B37009BB86B /* GifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCell.swift; sourceTree = "<group>"; };
 		7EB7401E2A6998DC008EABF5 /* GIF Catalogue Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GIF Catalogue Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB740212A6998DC008EABF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB740232A6998DC008EABF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7E33262F2A70476700C96FB9 /* ExtraResources */ = {
+			isa = PBXGroup;
+			children = (
+				7E36F5D52A711B37009BB86B /* GifCell.swift */,
+			);
+			path = ExtraResources;
+			sourceTree = "<group>";
+		};
 		7EB740152A6998DC008EABF5 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +80,7 @@
 		7EB740202A6998DC008EABF5 /* GIF Catalogue Application */ = {
 			isa = PBXGroup;
 			children = (
+				7E33262F2A70476700C96FB9 /* ExtraResources */,
 				7EB740352A699921008EABF5 /* AppDelegate */,
 				7EB740362A69995C008EABF5 /* Controllers */,
 				7EB740372A69996A008EABF5 /* Views */,
@@ -188,6 +199,7 @@
 				7EB740262A6998DC008EABF5 /* ViewController.swift in Sources */,
 				7EB740222A6998DC008EABF5 /* AppDelegate.swift in Sources */,
 				7EB740242A6998DC008EABF5 /* SceneDelegate.swift in Sources */,
+				7E36F5D62A711B37009BB86B /* GifCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

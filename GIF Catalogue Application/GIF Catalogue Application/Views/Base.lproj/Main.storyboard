@@ -33,7 +33,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no GIF images to display." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Ta-8H-Xsq">
+                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Gif images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Ta-8H-Xsq">
                                     <rect key="frame" x="0.0" y="0.0" width="351" height="640"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -41,7 +41,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell1" id="bme-cy-BSC">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCell1" id="bme-cy-BSC" customClass="GifCell" customModule="GIF_Catalogue_Application" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RQW-Ue-aTL">
@@ -74,7 +74,7 @@
                     <connections>
                         <outlet property="gifCollectionView" destination="bWI-nP-Gek" id="ehJ-VW-Kzh"/>
                         <outlet property="gifDisplayLabel" destination="6Ta-8H-Xsq" id="oKn-Ac-bE3"/>
-                        <outlet property="gifImageView" destination="792-T2-ef0" id="GNF-A8-0My"/>
+                        <outlet property="gifImageView" destination="792-T2-ef0" id="pRF-f4-PbR"/>
                         <outlet property="searchBar" destination="kHy-rc-RVv" id="nk4-hr-Uqn"/>
                     </connections>
                 </viewController>

@@ -25,6 +25,7 @@ class ViewController: UICollectionViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         
         // User taps anywhere to dismiss the keyboard
         let userTap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -33,14 +34,14 @@ class ViewController: UICollectionViewController, UISearchBarDelegate {
         
         // Rounding corners of gif
         gifView.layer.borderWidth = 2.0
-        
-        searchBar.delegate = self
+        gifDisplayLabel.text = "There are no GIF images to display."
     }
     
     // User taps "Search" to dismiss the keyboard
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
+    
 
     
     //----------------------------------------
