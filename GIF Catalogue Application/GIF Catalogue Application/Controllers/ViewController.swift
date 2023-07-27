@@ -9,7 +9,7 @@ import UIKit
 //import RxSwift
 //import RxCocoa
 
-class CollectionViewController: UICollectionViewController, UISearchBarDelegate {
+class ViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var gifLabel: UILabel!
@@ -42,7 +42,7 @@ class CollectionViewController: UICollectionViewController, UISearchBarDelegate 
     //----------------------------------------
     
     func fetchGifs(searchWord: String) {
-        let urlString = "\(giphyURLSearch)?q=\(searchWord)&api_key=\(giphyAPIKey)"
+        let urlString = "https://\(giphyURLSearch)?q=\(searchWord)&api_key=\(giphyAPIKey)"
         
         guard let url = URL(string: urlString) else {
             print("URL does not work!")
