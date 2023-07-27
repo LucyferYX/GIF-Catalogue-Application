@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  GIF Catalogue Application
+//  Gif Catalogue Application
 //
 //  Created by liene.krista.neimane on 20/07/2023.
 //

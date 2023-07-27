@@ -1,12 +1,12 @@
 //
-//  GifCollectionViewCell.swift
-//  GIF Catalogue Application
+//  GifCell.swift
+//  Gif Catalogue Application
 //
-//  Created by liene.krista.neimane on 26/07/2023.
+//  Created by liene.krista.neimane on 20/07/2023.
 //
 
-import UIKit
-
-class GifCell: UICollectionViewCell {
-    
-}
+//import UIKit
+//
+//class GifCell: UICollectionViewCell {
+//    
+//}

@@ -7,156 +7,137 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E1AE70D2A6B4514008A1996 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E1AE70C2A6B4514008A1996 /* RxSwift */; };
-		7E1AE70F2A6B4518008A1996 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7E1AE70E2A6B4518008A1996 /* RxCocoa */; };
-		7E1AE7122A6B499B008A1996 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7E1AE7112A6B499B008A1996 /* SDWebImage */; };
-		7E36F5D62A711B37009BB86B /* GifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E36F5D52A711B37009BB86B /* GifCell.swift */; };
-		7EB740222A6998DC008EABF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB740212A6998DC008EABF5 /* AppDelegate.swift */; };
-		7EB740242A6998DC008EABF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB740232A6998DC008EABF5 /* SceneDelegate.swift */; };
-		7EB740262A6998DC008EABF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB740252A6998DC008EABF5 /* ViewController.swift */; };
-		7EB740292A6998DC008EABF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB740272A6998DC008EABF5 /* Main.storyboard */; };
-		7EB7402B2A6998E0008EABF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB7402A2A6998E0008EABF5 /* Assets.xcassets */; };
-		7EB7402E2A6998E0008EABF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB7402C2A6998E0008EABF5 /* LaunchScreen.storyboard */; };
+		7EE8000A2A72BC61009A7D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE800092A72BC61009A7D7E /* AppDelegate.swift */; };
+		7EE8000C2A72BC61009A7D7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8000B2A72BC61009A7D7E /* SceneDelegate.swift */; };
+		7EE8000E2A72BC61009A7D7E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8000D2A72BC61009A7D7E /* CollectionViewController.swift */; };
+		7EE800112A72BC61009A7D7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EE8000F2A72BC61009A7D7E /* Main.storyboard */; };
+		7EE800132A72BC63009A7D7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EE800122A72BC63009A7D7E /* Assets.xcassets */; };
+		7EE800162A72BC63009A7D7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EE800142A72BC63009A7D7E /* LaunchScreen.storyboard */; };
+		7EE800222A72BCF5009A7D7E /* GifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE800212A72BCF5009A7D7E /* GifCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E36F5D52A711B37009BB86B /* GifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCell.swift; sourceTree = "<group>"; };
-		7EB7401E2A6998DC008EABF5 /* GIF Catalogue Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GIF Catalogue Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EB740212A6998DC008EABF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7EB740232A6998DC008EABF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7EB740252A6998DC008EABF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7EB740282A6998DC008EABF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7EB7402A2A6998E0008EABF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7EB7402D2A6998E0008EABF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7EB7402F2A6998E0008EABF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EE800062A72BC61009A7D7E /* Gif Catalogue Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gif Catalogue Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EE800092A72BC61009A7D7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7EE8000B2A72BC61009A7D7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7EE8000D2A72BC61009A7D7E /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		7EE800102A72BC61009A7D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7EE800122A72BC63009A7D7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7EE800152A72BC63009A7D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7EE800172A72BC63009A7D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EE800212A72BCF5009A7D7E /* GifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7EB7401B2A6998DC008EABF5 /* Frameworks */ = {
+		7EE800032A72BC61009A7D7E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E1AE7122A6B499B008A1996 /* SDWebImage in Frameworks */,
-				7E1AE70F2A6B4518008A1996 /* RxCocoa in Frameworks */,
-				7E1AE70D2A6B4514008A1996 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E1AE70B2A6B4514008A1996 /* Frameworks */ = {
+		7EE800072A72BC61009A7D7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7E33262F2A70476700C96FB9 /* ExtraResources */ = {
-			isa = PBXGroup;
-			children = (
-				7E36F5D52A711B37009BB86B /* GifCell.swift */,
-			);
-			path = ExtraResources;
-			sourceTree = "<group>";
-		};
-		7EB740152A6998DC008EABF5 = {
-			isa = PBXGroup;
-			children = (
-				7EB740202A6998DC008EABF5 /* GIF Catalogue Application */,
-				7EB7401F2A6998DC008EABF5 /* Products */,
-				7E1AE70B2A6B4514008A1996 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		7EB7401F2A6998DC008EABF5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7EB7401E2A6998DC008EABF5 /* GIF Catalogue Application.app */,
+				7EE800062A72BC61009A7D7E /* Gif Catalogue Application.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7EB740202A6998DC008EABF5 /* GIF Catalogue Application */ = {
+		7EE800082A72BC61009A7D7E /* Gif Catalogue Application */ = {
 			isa = PBXGroup;
 			children = (
-				7E33262F2A70476700C96FB9 /* ExtraResources */,
-				7EB740352A699921008EABF5 /* AppDelegate */,
-				7EB740362A69995C008EABF5 /* Controllers */,
-				7EB740372A69996A008EABF5 /* Views */,
-				7EB7402A2A6998E0008EABF5 /* Assets.xcassets */,
-				7EB7402F2A6998E0008EABF5 /* Info.plist */,
+				7EE8001F2A72BCAD009A7D7E /* ExtraResources */,
+				7EE8001D2A72BC8D009A7D7E /* AppDelegate */,
+				7EE8001E2A72BCA1009A7D7E /* Controllers */,
+				7EE800202A72BCC8009A7D7E /* Views */,
+				7EE800122A72BC63009A7D7E /* Assets.xcassets */,
+				7EE800172A72BC63009A7D7E /* Info.plist */,
 			);
-			path = "GIF Catalogue Application";
+			path = "Gif Catalogue Application";
 			sourceTree = "<group>";
 		};
-		7EB740352A699921008EABF5 /* AppDelegate */ = {
+		7EE8001D2A72BC8D009A7D7E /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				7EB740212A6998DC008EABF5 /* AppDelegate.swift */,
-				7EB740232A6998DC008EABF5 /* SceneDelegate.swift */,
+				7EE800092A72BC61009A7D7E /* AppDelegate.swift */,
+				7EE8000B2A72BC61009A7D7E /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		7EB740362A69995C008EABF5 /* Controllers */ = {
+		7EE8001E2A72BCA1009A7D7E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7EB740252A6998DC008EABF5 /* ViewController.swift */,
+				7EE8000D2A72BC61009A7D7E /* CollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		7EB740372A69996A008EABF5 /* Views */ = {
+		7EE8001F2A72BCAD009A7D7E /* ExtraResources */ = {
 			isa = PBXGroup;
 			children = (
-				7EB740272A6998DC008EABF5 /* Main.storyboard */,
-				7EB7402C2A6998E0008EABF5 /* LaunchScreen.storyboard */,
+				7EE800212A72BCF5009A7D7E /* GifCell.swift */,
+			);
+			path = ExtraResources;
+			sourceTree = "<group>";
+		};
+		7EE800202A72BCC8009A7D7E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7EE8000F2A72BC61009A7D7E /* Main.storyboard */,
+				7EE800142A72BC63009A7D7E /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7EE8FFFD2A72BC61009A7D7E = {
+			isa = PBXGroup;
+			children = (
+				7EE800082A72BC61009A7D7E /* Gif Catalogue Application */,
+				7EE800072A72BC61009A7D7E /* Products */,
+			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7EB7401D2A6998DC008EABF5 /* GIF Catalogue Application */ = {
+		7EE800052A72BC61009A7D7E /* Gif Catalogue Application */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7EB740322A6998E0008EABF5 /* Build configuration list for PBXNativeTarget "GIF Catalogue Application" */;
+			buildConfigurationList = 7EE8001A2A72BC63009A7D7E /* Build configuration list for PBXNativeTarget "Gif Catalogue Application" */;
 			buildPhases = (
-				7EB7401A2A6998DC008EABF5 /* Sources */,
-				7EB7401B2A6998DC008EABF5 /* Frameworks */,
-				7EB7401C2A6998DC008EABF5 /* Resources */,
+				7EE800022A72BC61009A7D7E /* Sources */,
+				7EE800032A72BC61009A7D7E /* Frameworks */,
+				7EE800042A72BC61009A7D7E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "GIF Catalogue Application";
-			packageProductDependencies = (
-				7E1AE70C2A6B4514008A1996 /* RxSwift */,
-				7E1AE70E2A6B4518008A1996 /* RxCocoa */,
-				7E1AE7112A6B499B008A1996 /* SDWebImage */,
-			);
-			productName = "GIF Catalogue Application";
-			productReference = 7EB7401E2A6998DC008EABF5 /* GIF Catalogue Application.app */;
+			name = "Gif Catalogue Application";
+			productName = "Gif Catalogue Application";
+			productReference = 7EE800062A72BC61009A7D7E /* Gif Catalogue Application.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7EB740162A6998DC008EABF5 /* Project object */ = {
+		7EE8FFFE2A72BC61009A7D7E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					7EB7401D2A6998DC008EABF5 = {
+					7EE800052A72BC61009A7D7E = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 7EB740192A6998DC008EABF5 /* Build configuration list for PBXProject "GIF Catalogue Application" */;
+			buildConfigurationList = 7EE800012A72BC61009A7D7E /* Build configuration list for PBXProject "Gif Catalogue Application" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -164,60 +145,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 7EB740152A6998DC008EABF5;
-			packageReferences = (
-				7EB740382A69B6BE008EABF5 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				7E1AE7102A6B499B008A1996 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-			);
-			productRefGroup = 7EB7401F2A6998DC008EABF5 /* Products */;
+			mainGroup = 7EE8FFFD2A72BC61009A7D7E;
+			productRefGroup = 7EE800072A72BC61009A7D7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7EB7401D2A6998DC008EABF5 /* GIF Catalogue Application */,
+				7EE800052A72BC61009A7D7E /* Gif Catalogue Application */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7EB7401C2A6998DC008EABF5 /* Resources */ = {
+		7EE800042A72BC61009A7D7E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EB7402E2A6998E0008EABF5 /* LaunchScreen.storyboard in Resources */,
-				7EB7402B2A6998E0008EABF5 /* Assets.xcassets in Resources */,
-				7EB740292A6998DC008EABF5 /* Main.storyboard in Resources */,
+				7EE800162A72BC63009A7D7E /* LaunchScreen.storyboard in Resources */,
+				7EE800132A72BC63009A7D7E /* Assets.xcassets in Resources */,
+				7EE800112A72BC61009A7D7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7EB7401A2A6998DC008EABF5 /* Sources */ = {
+		7EE800022A72BC61009A7D7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EB740262A6998DC008EABF5 /* ViewController.swift in Sources */,
-				7EB740222A6998DC008EABF5 /* AppDelegate.swift in Sources */,
-				7EB740242A6998DC008EABF5 /* SceneDelegate.swift in Sources */,
-				7E36F5D62A711B37009BB86B /* GifCell.swift in Sources */,
+				7EE8000E2A72BC61009A7D7E /* CollectionViewController.swift in Sources */,
+				7EE8000A2A72BC61009A7D7E /* AppDelegate.swift in Sources */,
+				7EE800222A72BCF5009A7D7E /* GifCell.swift in Sources */,
+				7EE8000C2A72BC61009A7D7E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7EB740272A6998DC008EABF5 /* Main.storyboard */ = {
+		7EE8000F2A72BC61009A7D7E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7EB740282A6998DC008EABF5 /* Base */,
+				7EE800102A72BC61009A7D7E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		7EB7402C2A6998E0008EABF5 /* LaunchScreen.storyboard */ = {
+		7EE800142A72BC63009A7D7E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7EB7402D2A6998E0008EABF5 /* Base */,
+				7EE800152A72BC63009A7D7E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -225,7 +202,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7EB740302A6998E0008EABF5 /* Debug */ = {
+		7EE800182A72BC63009A7D7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -285,7 +262,7 @@
 			};
 			name = Debug;
 		};
-		7EB740312A6998E0008EABF5 /* Release */ = {
+		7EE800192A72BC63009A7D7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -339,7 +316,7 @@
 			};
 			name = Release;
 		};
-		7EB740332A6998E0008EABF5 /* Debug */ = {
+		7EE8001B2A72BC63009A7D7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -348,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RW4PA4UCU3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GIF Catalogue Application/Info.plist";
+				INFOPLIST_FILE = "Gif Catalogue Application/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -359,7 +336,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Accenture.GIF-Catalogue-Application";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Accenture.Gif-Catalogue-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -367,7 +344,7 @@
 			};
 			name = Debug;
 		};
-		7EB740342A6998E0008EABF5 /* Release */ = {
+		7EE8001C2A72BC63009A7D7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -376,7 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RW4PA4UCU3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GIF Catalogue Application/Info.plist";
+				INFOPLIST_FILE = "Gif Catalogue Application/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -387,7 +364,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Accenture.GIF-Catalogue-Application";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Accenture.Gif-Catalogue-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -398,62 +375,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7EB740192A6998DC008EABF5 /* Build configuration list for PBXProject "GIF Catalogue Application" */ = {
+		7EE800012A72BC61009A7D7E /* Build configuration list for PBXProject "Gif Catalogue Application" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7EB740302A6998E0008EABF5 /* Debug */,
-				7EB740312A6998E0008EABF5 /* Release */,
+				7EE800182A72BC63009A7D7E /* Debug */,
+				7EE800192A72BC63009A7D7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7EB740322A6998E0008EABF5 /* Build configuration list for PBXNativeTarget "GIF Catalogue Application" */ = {
+		7EE8001A2A72BC63009A7D7E /* Build configuration list for PBXNativeTarget "Gif Catalogue Application" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7EB740332A6998E0008EABF5 /* Debug */,
-				7EB740342A6998E0008EABF5 /* Release */,
+				7EE8001B2A72BC63009A7D7E /* Debug */,
+				7EE8001C2A72BC63009A7D7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7E1AE7102A6B499B008A1996 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		7EB740382A69B6BE008EABF5 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7E1AE70C2A6B4514008A1996 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7EB740382A69B6BE008EABF5 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		7E1AE70E2A6B4518008A1996 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7EB740382A69B6BE008EABF5 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		7E1AE7112A6B499B008A1996 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7E1AE7102A6B499B008A1996 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 7EB740162A6998DC008EABF5 /* Project object */;
+	rootObject = 7EE8FFFE2A72BC61009A7D7E /* Project object */;
 }
