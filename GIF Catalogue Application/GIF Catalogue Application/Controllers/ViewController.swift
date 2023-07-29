@@ -5,9 +5,9 @@
 //  Created by liene.krista.neimane on 20/07/2023.
 //
 
-import UIKit
 //import RxSwift
 //import RxCocoa
+import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate {
     
@@ -21,17 +21,14 @@ class ViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        fetchGifs(searchWord: "tree")
         
         // User taps anywhere to dismiss the keyboard
         let userTap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         userTap.cancelsTouchesInView = false
         view.addGestureRecognizer(userTap)
         
-        // Rounding corners of gif
-        // gifView.layer.borderWidth = 2.0
         gifLabel.text = "There are no GIF images to display."
-        fetchGifs(searchWord: "tree")
-
     }
     
     // User taps "Search" to dismiss the keyboard

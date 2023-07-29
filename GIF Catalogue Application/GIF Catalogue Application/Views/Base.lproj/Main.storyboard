@@ -35,7 +35,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCell1" id="QKV-1a-YMh">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCell1" id="QKV-1a-YMh" customClass="GifCell" customModule="Gif_Catalogue_Application" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="161" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XfB-Fa-Nll">
@@ -49,6 +49,9 @@
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="161" height="128"/>
+                                        <connections>
+                                            <outlet property="gifImageView" destination="JnD-4X-iiM" id="13Q-xA-K8E"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
