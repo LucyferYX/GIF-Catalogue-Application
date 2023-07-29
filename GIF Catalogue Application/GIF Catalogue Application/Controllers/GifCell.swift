@@ -14,4 +14,3 @@ class GifCell: UICollectionViewCell {
         gifImageView.layer.borderWidth = 2.0
     }
 }
-// gifImageView.layer.borderWidth = 2.0
