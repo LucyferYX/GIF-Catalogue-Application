@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,12 +14,21 @@
             <objects>
                 <viewController storyboardIdentifier="CVC1" id="BYZ-38-t0r" customClass="ViewController" customModule="Gif_Catalogue_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Xc-v2-cHC">
-                                <rect key="frame" x="16" y="139" width="361" height="679"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="1fK-0J-3fD">
+                                <rect key="frame" x="20" y="60" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7gg-A5-ueq"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qzp-FL-bai"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Xc-v2-cHC">
+                                <rect key="frame" x="15" y="128" width="384" height="709"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eEk-mP-s4O">
                                     <size key="itemSize" width="161" height="128"/>
@@ -28,14 +37,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No GIFs found." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rfi-f4-QqH">
-                                    <rect key="frame" x="0.0" y="0.0" width="361" height="679"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="384" height="709"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" systemColor="placeholderTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCell1" id="QKV-1a-YMh" customClass="GifCell" customModule="Gif_Catalogue_Application" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCell" id="QKV-1a-YMh" customClass="GifCell" customModule="Gif_Catalogue_Application" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="161" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XfB-Fa-Nll">
@@ -50,22 +59,23 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="161" height="128"/>
                                         <connections>
-                                            <outlet property="gifImageView" destination="JnD-4X-iiM" id="13Q-xA-K8E"/>
+                                            <outlet property="gifImageView" destination="JnD-4X-iiM" id="2DK-8d-ueM"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fK-0J-3fD">
-                                <rect key="frame" x="0.0" y="67" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qzp-FL-bai"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Xc-v2-cHC" secondAttribute="trailing" constant="15" id="Gcy-f3-gRT"/>
+                            <constraint firstItem="1fK-0J-3fD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QDK-9B-6Sy"/>
+                            <constraint firstItem="1fK-0J-3fD" firstAttribute="centerX" secondItem="4Xc-v2-cHC" secondAttribute="centerX" id="TLR-q1-Pus"/>
+                            <constraint firstItem="4Xc-v2-cHC" firstAttribute="top" secondItem="1fK-0J-3fD" secondAttribute="bottom" constant="24" id="VBk-Mc-z8k"/>
+                            <constraint firstItem="1fK-0J-3fD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="eqS-XB-FP0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Xc-v2-cHC" secondAttribute="bottom" constant="25" id="nVU-lJ-Jxn"/>
+                            <constraint firstItem="4Xc-v2-cHC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="u5Z-C9-EPM"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="gifCollectionView" destination="4Xc-v2-cHC" id="9eH-AL-zeR"/>
@@ -75,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="53.623188405797109" y="-35.491071428571423"/>
         </scene>
     </scenes>
     <resources>
