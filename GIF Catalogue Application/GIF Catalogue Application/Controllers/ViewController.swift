@@ -41,15 +41,20 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
         
         //---
         if let searchField = searchBar.value(forKey: "searchField") as? UITextField {
-            searchField.layer.cornerRadius = 0
+            // Corners
+            searchField.layer.cornerRadius = 5
             searchField.clipsToBounds = true
-            searchField.leftView = nil
+            // Colours
+            searchField.backgroundColor = UIColor.white
+            searchField.layer.borderColor = UIColor.systemGray4.cgColor
+            searchField.layer.borderWidth = 1
             let attributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: UIColor.lightGray
             ]
+            // Removes search bar icon
+            searchField.leftView = nil
             searchField.attributedPlaceholder = NSAttributedString(string: "Browse GIF images", attributes: attributes)
         }
-        searchBar.barTintColor = UIColor.white
         searchBar.backgroundImage = UIImage()
     }
     
