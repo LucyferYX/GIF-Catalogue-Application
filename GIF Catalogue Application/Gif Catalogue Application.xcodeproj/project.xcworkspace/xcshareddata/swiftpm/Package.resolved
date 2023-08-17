@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "flanimatedimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Flipboard/FLAnimatedImage.git",
+      "state" : {
+        "revision" : "d4f07b6f164d53c1212c3e54d6460738b1981e9f",
+        "version" : "1.0.17"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
+        "version" : "6.6.0"
+      }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage",
+      "state" : {
+        "revision" : "633996a807442ec28df9d33b0f88ce57a0e2fdbf",
+        "version" : "5.17.0"
+      }
+    }
+  ],
+  "version" : 2
+}

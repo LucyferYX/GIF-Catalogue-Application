@@ -44,22 +44,23 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCell" id="QKV-1a-YMh" customClass="GifCell" customModule="Gif_Catalogue_Application" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCell1" id="QKV-1a-YMh" customClass="GifCell" customModule="Gif_Catalogue_Application" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="161" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XfB-Fa-Nll">
                                             <rect key="frame" x="0.0" y="0.0" width="161" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnD-4X-iiM">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zvX-pw-LWi" customClass="FLAnimatedImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="161" height="128"/>
                                         <connections>
-                                            <outlet property="gifImageView" destination="JnD-4X-iiM" id="2DK-8d-ueM"/>
+                                            <outlet property="gifImageView" destination="zvX-pw-LWi" id="fkj-EG-ZB6"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

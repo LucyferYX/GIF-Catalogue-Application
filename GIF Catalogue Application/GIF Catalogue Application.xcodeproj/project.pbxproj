@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7EB09FF52A8D83BD0012A358 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7EB09FF42A8D83BD0012A358 /* RxSwift */; };
+		7EB1C5322A8A2D7300583A9B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7EB1C5312A8A2D7300583A9B /* SDWebImage */; };
+		7EB1C5352A8A40A700583A9B /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7EB1C5342A8A40A700583A9B /* FLAnimatedImage */; };
 		7EE5B68A2A7473C100C610CE /* GifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5B6892A7473C100C610CE /* GifCell.swift */; };
 		7EE8000A2A72BC61009A7D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE800092A72BC61009A7D7E /* AppDelegate.swift */; };
 		7EE8000C2A72BC61009A7D7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE8000B2A72BC61009A7D7E /* SceneDelegate.swift */; };
@@ -33,6 +36,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EB09FF52A8D83BD0012A358 /* RxSwift in Frameworks */,
+				7EB1C5322A8A2D7300583A9B /* SDWebImage in Frameworks */,
+				7EB1C5352A8A40A700583A9B /* FLAnimatedImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +116,11 @@
 			dependencies = (
 			);
 			name = "Gif Catalogue Application";
+			packageProductDependencies = (
+				7EB1C5312A8A2D7300583A9B /* SDWebImage */,
+				7EB1C5342A8A40A700583A9B /* FLAnimatedImage */,
+				7EB09FF42A8D83BD0012A358 /* RxSwift */,
+			);
 			productName = "Gif Catalogue Application";
 			productReference = 7EE800062A72BC61009A7D7E /* Gif Catalogue Application.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +149,11 @@
 				Base,
 			);
 			mainGroup = 7EE8FFFD2A72BC61009A7D7E;
+			packageReferences = (
+				7EB1C5302A8A2D7300583A9B /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				7EB1C5332A8A40A700583A9B /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
+				7EB09FF32A8D83BD0012A358 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 7EE800072A72BC61009A7D7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -386,6 +402,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7EB09FF32A8D83BD0012A358 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		7EB1C5302A8A2D7300583A9B /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		7EB1C5332A8A40A700583A9B /* XCRemoteSwiftPackageReference "FLAnimatedImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flipboard/FLAnimatedImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7EB09FF42A8D83BD0012A358 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EB09FF32A8D83BD0012A358 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		7EB1C5312A8A2D7300583A9B /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EB1C5302A8A2D7300583A9B /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		7EB1C5342A8A40A700583A9B /* FLAnimatedImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EB1C5332A8A40A700583A9B /* XCRemoteSwiftPackageReference "FLAnimatedImage" */;
+			productName = FLAnimatedImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7EE8FFFE2A72BC61009A7D7E /* Project object */;
 }

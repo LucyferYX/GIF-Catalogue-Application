@@ -5,8 +5,7 @@
 //  Created by liene.krista.neimane on 20/07/2023.
 //
 
-//import RxSwift
-//import RxCocoa
+import RxSwift
 import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -18,7 +17,6 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
     private let giphyAPIKey = "eD2EKarMyNu9z4nBQaKzAC2Zyfg72oky"
     private let giphyURLSearch = "api.giphy.com/v1/gifs/search"
     
-    //---
     private var gifs: [Gif] = []
     private var searchTimer: Timer?
     
@@ -26,7 +24,6 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
         super.viewDidLoad()
         searchBar.delegate = self
         
-        //---
         gifCollectionView.dataSource = self
         gifCollectionView.delegate = self
         
@@ -68,7 +65,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
         return true
     }
 
-    
+    // Fetch GIFs based on the search text with time interval
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchTimer?.invalidate()
         searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
@@ -76,9 +73,8 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
         }
     }
     
-    //---
     
-    
+    // Extracting information from JSON, then displaying in collection view
     func fetchGifs(searchWord: String) {
         let urlString = "https://api.giphy.com/v1/gifs/search?q=\(searchWord)&api_key=\(giphyAPIKey)"
         
@@ -133,27 +129,28 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
         task.resume()
     }
     
-    //----
-    
+
+    // Return the number of gifs in collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return gifs.count
     }
 
+    // Dequeued reusable cell and pass it to GifCell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GifCell", for: indexPath) as! GifCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GifCell1", for: indexPath) as! GifCell
         cell.configure(with: gifs[indexPath.item])
         
+        //Updating label based on whether gifs are displayed
         if gifs.isEmpty {
-            //gifLabel.text = "There are no GIF images to display."
             gifLabel.isHidden = false
         } else {
-            //gifLabel.text = ""
             gifLabel.isHidden = true
         }
         
         return cell
     }
     
+    // Gif cell layout (2 cells per row)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfCellsPerRow: CGFloat = 2
         let spacingBetweenCells: CGFloat = 10
@@ -161,16 +158,6 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
         let totalSpacing = (2 * spacingBetweenCells) + ((numberOfCellsPerRow - 1) * spacingBetweenCells)
         let width = (collectionView.bounds.width - totalSpacing) / numberOfCellsPerRow
         return CGSize(width: width, height: 128)
-    }
-    
-    //-----
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        if offsetY > contentHeight - scrollView.frame.height {
-            // Fetch more gifs and update collection view
-        }
     }
 
 }
