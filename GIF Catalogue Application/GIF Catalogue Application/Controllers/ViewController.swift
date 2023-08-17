@@ -5,8 +5,9 @@
 //  Created by liene.krista.neimane on 20/07/2023.
 //
 
-import RxSwift
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -19,6 +20,11 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
     
     private var gifs: [Gif] = []
     private var searchTimer: Timer?
+    
+    let searchText = PublishSubject<String>()
+    let disposeBag = DisposeBag()
+    
+    // let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +59,21 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
             searchField.attributedPlaceholder = NSAttributedString(string: "Browse GIF images", attributes: attributes)
         }
         searchBar.backgroundImage = UIImage()
+        
+        // RxSwift
+        // Fetch GIFs based on the search text with time interval
+        searchText
+            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] text in
+                self?.fetchGifs(searchWord: text)
+            })
+            .disposed(by: disposeBag)
+
+        searchBar.rx.text
+            .orEmpty
+            .bind(to: searchText)
+            .disposed(by: disposeBag)
     }
     
     // User taps "Search" to dismiss the keyboard
@@ -66,14 +87,14 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
     }
 
     // Fetch GIFs based on the search text with time interval
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchTimer?.invalidate()
-        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
-            self?.fetchGifs(searchWord: searchText)
-        }
-    }
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        searchTimer?.invalidate()
+//        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
+//            self?.fetchGifs(searchWord: searchText)
+//        }
+//    }
     
-    
+
     // Extracting information from JSON, then displaying in collection view
     func fetchGifs(searchWord: String) {
         let urlString = "https://api.giphy.com/v1/gifs/search?q=\(searchWord)&api_key=\(giphyAPIKey)"
@@ -104,6 +125,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
                 return
             }
             
+            // Parsing JSON
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 if let jsonDict = json as? [String:Any], let dataDicts = jsonDict["data"] as? [[String:Any]] {
@@ -113,6 +135,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
                             self.gifs.append(Gif(url:url))
                         }
                     }
+                    //Updating label based on whether gifs are displayed
                     DispatchQueue.main.async {
                         self.gifCollectionView.reloadData()
                         if self.gifs.isEmpty {
@@ -139,13 +162,6 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GifCell1", for: indexPath) as! GifCell
         cell.configure(with: gifs[indexPath.item])
-        
-        //Updating label based on whether gifs are displayed
-        if gifs.isEmpty {
-            gifLabel.isHidden = false
-        } else {
-            gifLabel.isHidden = true
-        }
         
         return cell
     }
