@@ -9,7 +9,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+//last 2 go into extension
+class ViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var gifLabel: UILabel!
@@ -21,10 +22,12 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
     private var gifs: [Gif] = []
     private var searchTimer: Timer?
     
+    let numberOfCellsPerRow: CGFloat = 2
+    let spacingBetweenCells: CGFloat = 10
+    
     let searchText = PublishSubject<String>()
     let disposeBag = DisposeBag()
     
-    // let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +41,12 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
         userTap.cancelsTouchesInView = false
         view.addGestureRecognizer(userTap)
         
+        //add into functions
         gifLabel.text = "There are no GIF images to display."
         searchBar.text = ""
         searchBar.placeholder = "Browse GIF images"
         
-        //---
+        //into 4 functions
         if let searchField = searchBar.value(forKey: "searchField") as? UITextField {
             // Corners
             searchField.layer.cornerRadius = 5
@@ -85,14 +89,6 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
         searchBar.text = ""
         return true
     }
-
-    // Fetch GIFs based on the search text with time interval
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        searchTimer?.invalidate()
-//        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
-//            self?.fetchGifs(searchWord: searchText)
-//        }
-//    }
     
 
     // Extracting information from JSON, then displaying in collection view
@@ -102,57 +98,46 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
         // No gifs shown if search bar is empty
         if searchWord.isEmpty {
             self.gifs.removeAll()
-            DispatchQueue.main.async {
-                self.gifCollectionView.reloadData()
-                self.gifLabel.isHidden = false
-            }
+            self.gifCollectionView.reloadData()
+            self.gifLabel.isHidden = false
             return
         }
 
-        guard let url = URL(string: urlString) else {
-            print("URL does not work!")
-            return
-        }
+        guard let url = URL(string: urlString) else { return }
 
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("Error: \(error)!")
                 return
             }
             
-            guard let data = data else {
-                print("No data received!")
-                return
-            }
+            guard let data = data else { return }
             
             // Parsing JSON
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                if let jsonDict = json as? [String:Any], let dataDicts = jsonDict["data"] as? [[String:Any]] {
-                    self.gifs.removeAll()
-                    for dataDict in dataDicts {
-                        if let imagesDict = dataDict["images"] as? [String:Any], let originalDict = imagesDict["original"] as? [String:Any], let urlStr = originalDict["url"] as? String, let url = URL(string:urlStr) {
-                            self.gifs.append(Gif(url:url))
-                        }
-                    }
-                    //Updating label based on whether gifs are displayed
-                    DispatchQueue.main.async {
-                        self.gifCollectionView.reloadData()
-                        if self.gifs.isEmpty {
-                            self.gifLabel.isHidden = false
-                        } else {
-                            self.gifLabel.isHidden = true
-                        }
+                let decoder = JSONDecoder()
+                let welcome = try decoder.decode(Welcome.self, from: data)
+                self.gifs = welcome.data.compactMap { datum in
+                    if let urlStr = datum.images.original.url, let url = URL(string: urlStr) {
+                        return Gif(url: url)
+                    } else {
+                        return nil
                     }
                 }
+                DispatchQueue.main.async {
+                    self.gifCollectionView.reloadData()
+                    self.gifLabel.isHidden = !self.gifs.isEmpty
+                }
             } catch {
-                print("Error parsing JSON: \(error)!")
+                print("Error decoding JSON: \(error)!")
             }
-        }
-        task.resume()
+        }.resume()
     }
-    
 
+}
+
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     // Return the number of gifs in collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return gifs.count
@@ -168,8 +153,6 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
     
     // Gif cell layout (2 cells per row)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numberOfCellsPerRow: CGFloat = 2
-        let spacingBetweenCells: CGFloat = 10
         
         let totalSpacing = (2 * spacingBetweenCells) + ((numberOfCellsPerRow - 1) * spacingBetweenCells)
         let width = (collectionView.bounds.width - totalSpacing) / numberOfCellsPerRow
@@ -178,6 +161,24 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDat
 
 }
 
+
 struct Gif {
     let url : URL
 }
+
+struct Welcome: Codable {
+    let data: [Datum]
+}
+
+struct Datum: Codable {
+    let images: Images
+}
+
+struct Images: Codable {
+    let original: Original
+}
+
+struct Original: Codable {
+    let url: String?
+}
+
