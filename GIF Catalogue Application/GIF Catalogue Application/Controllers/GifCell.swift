@@ -13,9 +13,11 @@ class GifCell: UICollectionViewCell {
     
     @IBOutlet weak var gifImageView: FLAnimatedImageView!
     
+    // Shows loading for the images
     let activityIndicator = UIActivityIndicatorView(style: .medium)
     
     override func layoutSubviews() {
+        //Round corners
         gifImageView.layer.cornerRadius = 10
         gifImageView.clipsToBounds = true
     }
@@ -33,6 +35,7 @@ class GifCell: UICollectionViewCell {
         activityIndicator.startAnimating()
     }
     
+    // Gif animations
     func configure(with gif: Gif) {
         activityIndicator.startAnimating()
         gifImageView.sd_setImage(with: gif.url) { [weak self] _, _, _, _ in

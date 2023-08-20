@@ -9,7 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-//last 2 go into extension
 class ViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -22,7 +21,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     private var gifs: [Gif] = []
     private var searchTimer: Timer?
     
-    let numberOfCellsPerRow: CGFloat = 2
+    var numberOfCellsPerRow: CGFloat = 2
     let spacingBetweenCells: CGFloat = 10
     
     let searchText = PublishSubject<String>()
@@ -31,41 +30,23 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.delegate = self
         
         gifCollectionView.dataSource = self
         gifCollectionView.delegate = self
         
-        // User taps anywhere to dismiss the keyboard
-        let userTap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-        userTap.cancelsTouchesInView = false
-        view.addGestureRecognizer(userTap)
-        
-        //add into functions
         gifLabel.text = "There are no GIF images to display."
-        searchBar.text = ""
-        searchBar.placeholder = "Browse GIF images"
-        
-        //into 4 functions
+        configureSearchBar(searchBar)
         if let searchField = searchBar.value(forKey: "searchField") as? UITextField {
-            // Corners
-            searchField.layer.cornerRadius = 5
-            searchField.clipsToBounds = true
-            // Colours
-            searchField.backgroundColor = UIColor.white
-            searchField.layer.borderColor = UIColor.systemGray4.cgColor
-            searchField.layer.borderWidth = 1
-            let attributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor.lightGray
-            ]
-            // Removes search bar icon
-            searchField.leftView = nil
-            searchField.attributedPlaceholder = NSAttributedString(string: "Browse GIF images", attributes: attributes)
+            configureSearchField(searchField)
         }
-        searchBar.backgroundImage = UIImage()
-        
-        // RxSwift
-        // Fetch GIFs based on the search text with time interval
+        dismissKeyboard()
+        setupSearchBarBindings()
+    }
+    
+    
+    // RxSwift
+    // Fetch GIFs based on the search text with time interval
+    func setupSearchBarBindings() {
         searchText
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
@@ -90,6 +71,37 @@ class ViewController: UIViewController, UISearchBarDelegate {
         return true
     }
     
+    // User taps anywhere to dismiss the keyboard
+    func dismissKeyboard() {
+        let userTap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        userTap.cancelsTouchesInView = false
+        view.addGestureRecognizer(userTap)
+    }
+
+    
+    func configureSearchBar(_ searchBar: UISearchBar) {
+        searchBar.delegate = self
+        searchBar.backgroundImage = UIImage()
+        searchBar.text = ""
+        searchBar.placeholder = "Browse GIF images"
+    }
+    
+    func configureSearchField(_ searchField: UITextField) {
+        if let searchField = searchBar.value(forKey: "searchField") as? UITextField {
+            searchField.layer.cornerRadius = 5
+            searchField.clipsToBounds = true
+            searchField.backgroundColor = UIColor.white
+            searchField.layer.borderColor = UIColor.systemGray4.cgColor
+            searchField.layer.borderWidth = 1
+            let attributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.lightGray
+            ]
+            // Removes search bar icon
+            searchField.leftView = nil
+            searchField.attributedPlaceholder = NSAttributedString(string: "Browse GIF images", attributes: attributes)
+        }
+    }
+
 
     // Extracting information from JSON, then displaying in collection view
     func fetchGifs(searchWord: String) {
@@ -157,6 +169,20 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         let totalSpacing = (2 * spacingBetweenCells) + ((numberOfCellsPerRow - 1) * spacingBetweenCells)
         let width = (collectionView.bounds.width - totalSpacing) / numberOfCellsPerRow
         return CGSize(width: width, height: 128)
+    }
+    
+    // Gif cell layout when phone is rotated
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        if let layout = gifCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            if size.width > size.height {
+                numberOfCellsPerRow = 4
+            } else {
+                numberOfCellsPerRow = 2
+            }
+            layout.invalidateLayout()
+        }
     }
 
 }
