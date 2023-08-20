@@ -201,10 +201,10 @@ struct Datum: Codable {
 }
 
 struct Images: Codable {
-    let original: Original
+    let original: FixedHeight
 }
 
-struct Original: Codable {
+struct FixedHeight: Codable {
     let url: String?
 }
 
